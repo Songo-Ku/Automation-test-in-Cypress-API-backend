@@ -1,0 +1,32 @@
+{
+    "article": {
+        "id": 155470,
+        "slug": "title-+-0.14971119150942735-21016",
+        "title": "title + 0.14971119150942735",
+        "description": "description + 0.14971119150942735",
+        "body": "body + 0.14971119150942735",
+        "createdAt": "2025-02-24T16:11:12.049Z",
+        "updatedAt": "2025-02-24T16:11:12.049Z",
+        "authorId": 21016,
+        "tagList": [],
+        "author": {
+            "username": "cytest123123123",
+            "bio": null,
+            "image": "https://conduit-api.bondaracademy.com/images/smiley-cyrus.jpeg",
+            "following": false
+        },
+        "favoritedBy": [
+            {
+                "id": 21016,
+                "email": "zbogdancajanko1@gmail.com",
+                "username": "cytest123123123",
+                "password": "$2a$10$lptVOGXhhzi9cj7eqkxqhOQZhIN90bP9tYG8AWqvelwJoYNTpyIUa",
+                "image": "https://conduit-api.bondaracademy.com/images/smiley-cyrus.jpeg",
+                "bio": null,
+                "demo": false
+            }
+        ],
+        "favorited": true,
+        "favoritesCount": 1
+    }
+}
