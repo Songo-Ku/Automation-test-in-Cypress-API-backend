@@ -1,12 +1,6 @@
 // import { onSmartTablePage } from "../support/page_objects/smartTablePage"\
 import { mathNumberRandom } from "../support/funcitonalitiesJs/generatorUniqueId"
 
-
-
-
-
-
-
 describe('Test with backedn', () => {
 
   beforeEach('login to application by interface', () => {
