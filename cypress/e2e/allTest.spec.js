@@ -6,9 +6,6 @@ describe('Test with backedn', () => {
   beforeEach('login to application by interface', () => {
     cy.intercept('GET', Cypress.env('apiUrl')+'/api/tags', {fixture: 'tags.json'} )
     cy.loginViaApiWithToken()
-
-
-    // expect(ls.getItem('https://conduit.bondaracademy.com'))
   })
 
   it('verify login by user interface with type login and password', () => {
@@ -20,14 +17,11 @@ describe('Test with backedn', () => {
     cy.get('form').submit()
   })
 
-
   it('verify correct request and response', () => {
-
     const mathNumberRandom = Math.random() *10
     const titleWithUniqueId = `title${mathNumberRandom}`
     const descriptionWithUniqueId = `description ${mathNumberRandom}`
     const bodyWithUniqueId = `body${mathNumberRandom}`
-
 
     cy.intercept('POST', '**/articles/').as('postArticles')
     cy.contains('New Article').click()
@@ -53,7 +47,6 @@ describe('Test with backedn', () => {
           expect(response.status).to.equal(204)
       })
     })  
-
   })
 
   it('verify popular tags are displayed', () => {
@@ -66,7 +59,6 @@ describe('Test with backedn', () => {
 
 
   it('intercepting and modifying the req ', () => {
-
     const titleWithUniqueId = `title + ${mathNumberRandom}`
     const descriptionWithUniqueId = `description ${mathNumberRandom}`
     const bodyWithUniqueId = `body + ${mathNumberRandom}`
@@ -90,7 +82,6 @@ describe('Test with backedn', () => {
   })
 
   it('intercepting and modifying the req ', () => {
-
     const titleWithUniqueId = `title + ${mathNumberRandom}`
     const descriptionWithUniqueId = `description ${mathNumberRandom}`
     const bodyWithUniqueId = `body + ${mathNumberRandom}`
@@ -117,8 +108,6 @@ describe('Test with backedn', () => {
     })
   })
  
-
-
   it.only('verify global feed likes count', () => {
     cy.intercept('GET', Cypress.env('apiUrl')+'/api/articles/feed*', {"articles":[],"articlesCount":0})
     cy.intercept('GET', Cypress.env('apiUrl')+'/api/articles*', {fixture: 'articles.json'})
@@ -139,14 +128,6 @@ describe('Test with backedn', () => {
   })
 
   it('delete article from user interface tab global feed after create article via api ', () => {
-
-    //  instruction what to do
-    // 1 prepare login to get token 2 then request api create article using token 3 get slug, paste it to the interface and url adress
-    //  4 generate automate interface access to article, click delete and confir,  5 body request as constant 6 on request
-    //  use then and check expect 7  klik w global feed, pierwszy artykul, i sprawdz czy sie zgadza .first()
-    //  8 klik w delete, submit()    article-actions  9 wejdz w liste wszystkich artykulow i sprawdz czy pierwsdzy jest innny niz tworzylismy
-    //  z tego request get trzeba wziac reqest . its(body) then body expect not to equal nazwa naszego usunietego 
-
     const bodyNewArticleReq = {
       "article": {
           "title": "req from api postman",
@@ -178,9 +159,7 @@ describe('Test with backedn', () => {
       }).its('body').then(body => {
         expect(body.articles[0].title).not.to.equal("req from api postman")
       })
-
     })
   })
-  
 })
 
