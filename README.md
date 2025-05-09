@@ -34,7 +34,14 @@ cypress
 
 
 ##  Installation 
-install dependencies
+1 npm init:
+then accept all by default
+2 npm install cypress@13.17.0 --save-dev
+installed cypress with version
+3 npx cypress open
+3a dostosowanie w narzedziu cypress podstawowych configuracji jak i nadanie jaki format ma robic plikow
+4 zmiana w pliku config 
+5 npm install uuid
 
 ---
 
